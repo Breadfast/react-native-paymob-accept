@@ -20,11 +20,16 @@
     "baseUrl": "https://github.com/breadfast/react-native-paymob-accept"
   },
   "keywords": [
-    "react-native"
+    "react",
+    "native",
+    "breadfast",
+    "paymob",
+    "accept",
+    "payment"
   ],
   "author": {
     "name": "Ghobashy",
-    "email": "m.ghobashy@breadfast.com",
+    "email": "m.ghobashy@breadfast.com"
   },
   "license": "MIT",
   "licenseFilename": "LICENSE",
@@ -39,5 +44,9 @@
   },
   "dependencies": {
     "repos": "link:../"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Breadfast/react-native-paymob-accept/issues"
+  },
+  "homepage": "https://github.com/Breadfast/react-native-paymob-accept#readme"
 }
