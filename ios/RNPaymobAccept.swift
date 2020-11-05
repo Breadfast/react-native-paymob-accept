@@ -70,24 +70,50 @@ class RNPaymobAccept: UIViewController, AcceptSDKDelegate {
         let topVC = topMostController()
 
         do {
+            let mappedData:NSMutableDictionary = NSMutableDictionary()
+            mappedData["paymentKey"] = data["paymentKey"] ?? ""
+            mappedData["saveCardDefault"] = data["saveCardDefault"] ?? false
+            mappedData["showSaveCard"] = data["showSaveCard"] ?? true
+            mappedData["isEnglish"] = data["isEnglish"] ?? true
+            mappedData["showAlerts"] = data["showAlerts"] ?? true
             
-//            print(json);
-            let bData = [  "apartment": "NA",
-                           "email": "NA",
-                           "floor": "NA",
-                           "first_name": "NA",
+            // User data
+            mappedData["firstName"] = data["firstName"] ?? "NA"
+            mappedData["lastName"] = data["lastName"] ?? "NA"
+            mappedData["building"] = data["building"] ?? "NA"
+            mappedData["floor"] = data["floor"] ?? "NA"
+            mappedData["apartment"] = data["apartment"] ?? "NA"
+            mappedData["city"] = data["city"] ?? "NA"
+            mappedData["state"] = data["state"] ?? "NA"
+            mappedData["city"] = data["city"] ?? "NA"
+            mappedData["country"] = data["country"] ?? "NA"
+            mappedData["email"] = data["email"] ?? "NA"
+            mappedData["phoneNumber"] = data["phoneNumber"] ?? "NA"
+            mappedData["postalCode"] = data["postalCode"] ?? "NA"
+            
+            
+            let bData = [  "apartment": mappedData["apartment"],
+                           "email": mappedData["email"],
+                           "floor": mappedData["floor"],
+                           "first_name": mappedData["firstName"],
                            "street": "NA",
-                           "building": "NA",
-                           "phone_number": "NA",
+                           "building":  mappedData["building"],
+                           "phone_number": mappedData["phoneNumber"],
                            "shipping_method": "NA",
-                           "postal_code": "NA",
-                           "city": "NA",
-                           "country": "NA",
-                           "last_name": "NA",
-                           "state": "NA"
+                           "postal_code": mappedData["postalCode"],
+                           "city": mappedData["city"],
+                           "country": mappedData["country"],
+                           "last_name": mappedData["lastName"],
+                           "state": mappedData["state"]
             ]
-            successCallback([data["paymentKey"]])
-            try accept.presentPayVC(vC: topVC, billingData: bData, paymentKey:data["paymentKey"] as! String,  saveCardDefault: false, showSaveCard: false, showAlerts: true)
+            try accept.presentPayVC(vC: topVC,
+                                    billingData: bData as! [String : String],
+                                    paymentKey:mappedData["paymentKey"] as! String,
+                                    saveCardDefault: mappedData["saveCardDefault"] as! Bool,
+                                    showSaveCard: mappedData["showSaveCard"] as! Bool,
+                                    showAlerts: mappedData["showAlerts"] as! Bool,
+                                    isEnglish: mappedData["isEnglish"] as! Bool
+            )
 
 //                                    saveCardDefault: json["saveCardDefault"],
 //                                    showSaveCard: json["showSaveCard"],

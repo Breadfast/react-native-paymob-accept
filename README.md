@@ -147,23 +147,25 @@ RNPaymobAccept.payWithNoToken({
 });
 ```
 
-| Prop                  | Description                     | Type    | Default      |
-| --------------------- | ------------------------------- | ------- | ------------ |
-| **`paymentKey`**      | Generated one-time payment key  | String  | **Required** |
-| **`showSavedCard`**   | show save card checkbox         | Boolean | **Required** |
-| **`saveCardDefault`** | default boolean for saving card | Boolean | **Required** |
-| **`activityTitle`**   | title for the 3d secure Screen  | String  | **Optional** |
-| **`firstName`**       | TODO                            | String  | **Optional** |
-| **`lastName`**        | TODO                            | String  | **Optional** |
-| **`building`**        | TODO                            | String  | **Optional** |
-| **`floor`**           | TODO                            | String  | **Optional** |
-| **`apartment`**       | TODO                            | String  | **Optional** |
-| **`city`**            | TODO                            | String  | **Optional** |
-| **`state`**           | TODO                            | String  | **Optional** |
-| **`country`**         | TODO                            | String  | **Optional** |
-| **`email`**           | TODO                            | String  | **Optional** |
-| **`phoneNumber`**     | TODO                            | String  | **Optional** |
-| **`postalCode`**      | TODO                            | String  | **Optional** |
+| Prop                  | Description                                   | Type    | Default      |
+| --------------------- | --------------------------------------------- | ------- | ------------ |
+| **`paymentKey`**      | Generated one-time payment key                | String  | **Required** |
+| **`showSaveCard`**    | show save card checkbox                       | Boolean | **Required** |
+| **`saveCardDefault`** | default boolean for saving card               | Boolean | **Required** |
+| **`showAlerts`**      | show popup alerts                             | Boolean | **Optional** |
+| **`isEnglish`**       | Language English or Arabic                    | Boolean | **Optional** |
+| **`activityTitle`**   | title for the 3d secure Screen (Android Only) | String  | **Optional** |
+| **`firstName`**       | TODO                                          | String  | **Optional** |
+| **`lastName`**        | TODO                                          | String  | **Optional** |
+| **`building`**        | TODO                                          | String  | **Optional** |
+| **`floor`**           | TODO                                          | String  | **Optional** |
+| **`apartment`**       | TODO                                          | String  | **Optional** |
+| **`city`**            | TODO                                          | String  | **Optional** |
+| **`state`**           | TODO                                          | String  | **Optional** |
+| **`country`**         | TODO                                          | String  | **Optional** |
+| **`email`**           | TODO                                          | String  | **Optional** |
+| **`phoneNumber`**     | TODO                                          | String  | **Optional** |
+| **`postalCode`**      | TODO                                          | String  | **Optional** |
 
 Callbacks functions
 
