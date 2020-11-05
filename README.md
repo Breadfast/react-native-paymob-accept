@@ -8,6 +8,8 @@
 
 `$ react-native link react-native-paymob-accept`
 
+`$ cd ios && pod install`
+
 ### Manual installation
 
 #### iOS
