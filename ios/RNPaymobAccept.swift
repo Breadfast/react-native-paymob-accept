@@ -56,14 +56,14 @@ class RNPaymobAccept: UIViewController, AcceptSDKDelegate {
         return topController
     }
     
-    @objc public func payWithNoToken(_ json:Dictionary<NSObject,AnyObject>, successCallback:  @escaping RCTPromiseResolveBlock, errorCallback:  @escaping RCTPromiseRejectBlock) {
+    @objc public func payWithNoToken(_ data:NSDictionary, successCallback:  @escaping RCTPromiseResolveBlock, errorCallback:  @escaping RCTPromiseRejectBlock) {
         DispatchQueue.main.async { [weak self] in
-            self?._payWithNoToken(json, successCallback:successCallback , errorCallback:errorCallback)
+            self?._payWithNoToken(data, successCallback:successCallback , errorCallback:errorCallback)
         }
 
     }
     
-    public func _payWithNoToken(_ json:Dictionary<NSObject,AnyObject>, successCallback: @escaping RCTPromiseResolveBlock, errorCallback: @escaping RCTPromiseRejectBlock) {
+    public func _payWithNoToken(_ data:NSDictionary, successCallback: @escaping RCTPromiseResolveBlock, errorCallback: @escaping RCTPromiseRejectBlock) {
         accept.delegate = self
         self.successCallback = successCallback
         self.errorCallback = errorCallback
@@ -86,16 +86,8 @@ class RNPaymobAccept: UIViewController, AcceptSDKDelegate {
                            "last_name": "NA",
                            "state": "NA"
             ]
-//            successCallback(["I reached swift"])
-            try accept.presentPayVC(vC: topVC, billingData: bData, paymentKey: "ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6VXhNaUo5LmV5SmxlSEFpT2pFMU9UZzBOamszTVRJc0ltOXlaR1Z5WDJsa0lqbzFOelEyTmpreUxDSmlhV3hzYVc1blgyUmhkR0VpT25zaVptbHljM1JmYm1GdFpTSTZJa0ZpWkdGc2JHRm9jMmg2ZW5wa0lpd2liR0Z6ZEY5dVlXMWxJam9pVG05bVlXeGhZWE5oWVhwMmMzTjJJaXdpYzNSeVpXVjBJam9pUld3Z1UyaHZjbTkxYXlCRGFYUjVJQzBnWVhOa1lYTmtJaXdpWW5WcGJHUnBibWNpT2lKT1FTSXNJbVpzYjI5eUlqb2lUa0VpTENKaGNHRnlkRzFsYm5RaU9pSk9RU0lzSW1OcGRIa2lPaUpEWVdseWJ5SXNJbk4wWVhSbElqb2lUa0VpTENKamIzVnVkSEo1SWpvaVJXZDVjSFFpTENKbGJXRnBiQ0k2SW1GaVpHRnNiR0ZvTG01dlptRnNRRzF6Ymk1amIyMGlMQ0p3YUc5dVpWOXVkVzFpWlhJaU9pSXdNVEF3T0RBME5qQTVPQ0lzSW5CdmMzUmhiRjlqYjJSbElqb2lUa0VpTENKbGVIUnlZVjlrWlhOamNtbHdkR2x2YmlJNklrNUJJbjBzSW1OMWNuSmxibU41SWpvaVJVZFFJaXdpYVc1MFpXZHlZWFJwYjI1ZmFXUWlPakkyT1RVekxDSjFjMlZ5WDJsa0lqb3hPRFkyTkN3aWJHOWphMTl2Y21SbGNsOTNhR1Z1WDNCaGFXUWlPblJ5ZFdVc0ltRnRiM1Z1ZEY5alpXNTBjeUk2TWpBd01Dd2ljRzFyWDJsd0lqb2lNVGsyTGpFMU15NHhNell1TVRFaWZRLk5pZ2JZaloyeFAzWkpFQjVNWlJjb3Y1cjVYVV9ydGJxUmlUdWduRHVKbHlvOUJMQUVlWHVDb3JkdWtNbVVHSVNKMDFPNnlCTExaV2w3ZFlKWjRwbFBB",  saveCardDefault: false, showSaveCard: false, showAlerts: true)
-
-//            try accept.presentPayVC(vC: UIApplication.shared.delegate.window.rootViewController,
-//            let rootViewController = UIApplication.shared.delegate?.window??.rootViewController as! UIViewController
-//            try accept.presentPayVC(vC: self,
-//                billingData: bData,
-//                paymentKey: "ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6VXhNaUo5LmV5SmxlSEFpT2pFMU9UZzBOamszTVRJc0ltOXlaR1Z5WDJsa0lqbzFOelEyTmpreUxDSmlhV3hzYVc1blgyUmhkR0VpT25zaVptbHljM1JmYm1GdFpTSTZJa0ZpWkdGc2JHRm9jMmg2ZW5wa0lpd2liR0Z6ZEY5dVlXMWxJam9pVG05bVlXeGhZWE5oWVhwMmMzTjJJaXdpYzNSeVpXVjBJam9pUld3Z1UyaHZjbTkxYXlCRGFYUjVJQzBnWVhOa1lYTmtJaXdpWW5WcGJHUnBibWNpT2lKT1FTSXNJbVpzYjI5eUlqb2lUa0VpTENKaGNHRnlkRzFsYm5RaU9pSk9RU0lzSW1OcGRIa2lPaUpEWVdseWJ5SXNJbk4wWVhSbElqb2lUa0VpTENKamIzVnVkSEo1SWpvaVJXZDVjSFFpTENKbGJXRnBiQ0k2SW1GaVpHRnNiR0ZvTG01dlptRnNRRzF6Ymk1amIyMGlMQ0p3YUc5dVpWOXVkVzFpWlhJaU9pSXdNVEF3T0RBME5qQTVPQ0lzSW5CdmMzUmhiRjlqYjJSbElqb2lUa0VpTENKbGVIUnlZVjlrWlhOamNtbHdkR2x2YmlJNklrNUJJbjBzSW1OMWNuSmxibU41SWpvaVJVZFFJaXdpYVc1MFpXZHlZWFJwYjI1ZmFXUWlPakkyT1RVekxDSjFjMlZ5WDJsa0lqb3hPRFkyTkN3aWJHOWphMTl2Y21SbGNsOTNhR1Z1WDNCaGFXUWlPblJ5ZFdVc0ltRnRiM1Z1ZEY5alpXNTBjeUk2TWpBd01Dd2ljRzFyWDJsd0lqb2lNVGsyTGpFMU15NHhNell1TVRFaWZRLk5pZ2JZaloyeFAzWkpFQjVNWlJjb3Y1cjVYVV9ydGJxUmlUdWduRHVKbHlvOUJMQUVlWHVDb3JkdWtNbVVHSVNKMDFPNnlCTExaV2w3ZFlKWjRwbFBB",
-//                saveCardDefault: true,
-//                showSaveCard: true, showAlerts: true, buttonsColor: UIColor.blue, isEnglish: false)
+            successCallback([data["paymentKey"]])
+            try accept.presentPayVC(vC: topVC, billingData: bData, paymentKey:data["paymentKey"] as! String,  saveCardDefault: false, showSaveCard: false, showAlerts: true)
 
 //                                    saveCardDefault: json["saveCardDefault"],
 //                                    showSaveCard: json["showSaveCard"],
