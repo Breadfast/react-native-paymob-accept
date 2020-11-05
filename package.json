@@ -42,9 +42,6 @@
     "react": "^16.9.0",
     "react-native": "^0.61.5"
   },
-  "dependencies": {
-    "repos": "link:../"
-  },
   "bugs": {
     "url": "https://github.com/Breadfast/react-native-paymob-accept/issues"
   },
