@@ -1,4 +1,4 @@
-package com.breadfast;
+package com.breadfast.reactnative;
 
 import java.util.Arrays;
 import java.util.Collections;

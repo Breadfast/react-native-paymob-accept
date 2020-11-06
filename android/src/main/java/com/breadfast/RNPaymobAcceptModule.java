@@ -1,4 +1,4 @@
-package com.breadfast;
+package com.breadfast.reactnative;
 
 import android.content.Intent;
 import android.os.Bundle;
