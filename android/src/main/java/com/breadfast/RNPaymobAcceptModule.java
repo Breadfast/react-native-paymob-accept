@@ -209,7 +209,7 @@ private final ActivityEventListener mActivityEventListener = new BaseActivityEve
   }
 };
 
-  public RNPaymobAccept(ReactApplicationContext reactContext) {
+  public RNPaymobAcceptModule(ReactApplicationContext reactContext) {
     super(reactContext);
     reactContext.addActivityEventListener(mActivityEventListener);
     this.reactContext = reactContext;

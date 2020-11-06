@@ -10,6 +10,21 @@
 
 `$ cd ios && pod install`
 
+### for older versions 
+
+Add the below line at the top of your PodFile, if using Pod
+
+`use_modular_headers!`
+
+
+Update your PodFile React dependency to look like this
+
+`pod 'React', :path => '../node_modules/react-native', :modular_headers => true`
+
+`pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec', :modular_headers => false`
+
+`pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec', :modular_headers => false`
+
 ### Manual installation
 
 #### iOS
