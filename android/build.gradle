@@ -29,7 +29,11 @@ android {
 repositories {
     mavenCentral()
 
-    maven { url "https://dl.bintray.com/paymobsolutions/paymob_accept_sdk" }
+    // maven { url "https://dl.bintray.com/paymobsolutions/paymob_accept_sdk" }
+
+    flatDir {
+       dirs 'libs'
+   }
 }
 
 dependencies {
@@ -41,7 +45,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     // compile 'com.paymob:acceptsdk:1.0.7'
-    implementation files('acceptsdk-release.aar')
+    compile 'com.paymob:acceptsdk:1.0@aar'
+    implementation files('libs\\acceptsdk-release.aar')
     compile 'com.android.volley:volley:1.1.1'
     compile 'morxander.editcard:EditCard:1.0.1'
     testCompile 'junit:junit:4.12'
