@@ -9,14 +9,14 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
                   react-native-paymob-accept
                    DESC
-  s.homepage     = "https://github.com/github_account/react-native-paymob-accept"
+  s.homepage     = "https://github.com/breadfast/react-native-paymob-accept"
   # brief license entry:
   s.license      = "MIT"
   # optional - use expanded license entry instead:
   # s.license    = { :type => "MIT", :file => "LICENSE" }
-  s.authors      = { "Your Name" => "yourname@email.com" }
+  s.authors      = { "Ghobashy" => "m.ghobashy@breadfast.com" }
   s.platforms    = { :ios => "10.0" }
-  s.source       = { :git => "https://github.com/github_account/react-native-paymob-accept.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/breadfast/react-native-paymob-accept.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,c,m,swift}"
   s.requires_arc = true

@@ -43,12 +43,16 @@ public class RNPaymobAcceptModule extends ReactContextBaseJavaModule {
     Intent pay_intent = new Intent(currentActivity, PayActivity.class);
     Boolean showSaveCard = (Boolean) data.get("showSaveCard");
     Boolean saveCardDefault = (Boolean) data.get("saveCardDefault");
+    Boolean isEnglish = (Boolean) data.get("isEnglish");
+    Boolean hideActionBar = (Boolean) data.get("hideActionBar");
     putNormalExtras(pay_intent, data);
     // Boolean to save the entered card details by default 
     pay_intent.putExtra(PayActivityIntentKeys.SAVE_CARD_DEFAULT, saveCardDefault);
     // Boolean to display the save card checkbox
     pay_intent.putExtra(PayActivityIntentKeys.SHOW_SAVE_CARD, showSaveCard);
     pay_intent.putExtra(PayActivityIntentKeys.THEME_COLOR,0x80970073);
+    pay_intent.putExtra("ActionBar",hideActionBar);
+    pay_intent.putExtra("language",isEnglish);
     // String themeColor = (String) data.get("themeColor");
     // if(themeColor != null){
     //   pay_intent.putExtra(PayActivityIntentKeys.THEME_COLOR, Integer.parseInt(themeColor, 16));

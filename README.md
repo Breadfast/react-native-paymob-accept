@@ -10,12 +10,11 @@
 
 `$ cd ios && pod install`
 
-### for older versions 
+### for older versions
 
 Add the below line at the top of your PodFile, if using Pod
 
 `use_modular_headers!`
-
 
 Update your PodFile React dependency to look like this
 
@@ -168,6 +167,9 @@ RNPaymobAccept.payWithNoToken({
 | **`showSaveCard`**    | show save card checkbox                       | Boolean | **Required** |
 | **`saveCardDefault`** | default boolean for saving card               | Boolean | **Required** |
 | **`showAlerts`**      | show popup alerts                             | Boolean | **Optional** |
+| **`isEnglish`**       | Language English or Arabic                    | Boolean |
+| **Required**          |
+| **`hideActionBar`**   | hide action bar (Android Only)                | Boolean | **Optional** |
 | **`isEnglish`**       | Language English or Arabic                    | Boolean | **Optional** |
 | **`activityTitle`**   | title for the 3d secure Screen (Android Only) | String  | **Optional** |
 | **`firstName`**       | TODO                                          | String  | **Optional** |
