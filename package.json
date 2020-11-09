@@ -1,7 +1,7 @@
 {
   "name": "react-native-paymob-accept",
   "title": "React Native Paymob Accept",
-  "version": "0.0.16",
+  "version": "0.0.18",
   "description": "React Native SDK wrapper for Paymob We Accept library",
   "main": "index.js",
   "files": [

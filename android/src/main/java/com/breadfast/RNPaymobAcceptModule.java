@@ -22,7 +22,9 @@ import com.paymob.acceptsdk.PayActivity;
 import com.paymob.acceptsdk.PayActivityIntentKeys;
 import com.paymob.acceptsdk.PayResponseKeys;
 import com.paymob.acceptsdk.SaveCardResponseKeys;
+import com.paymob.acceptsdk.ThreeDSecureWebViewActivty;
 import com.paymob.acceptsdk.ToastMaker;
+
 
 import java.util.HashMap;
 
@@ -45,17 +47,22 @@ public class RNPaymobAcceptModule extends ReactContextBaseJavaModule {
     Boolean saveCardDefault = (Boolean) data.get("saveCardDefault");
     Boolean isEnglish = (Boolean) data.get("isEnglish");
     Boolean hideActionBar = (Boolean) data.get("hideActionBar");
+    String language = "en";
+    if(isEnglish == false){
+      language = "ar";
+    }
     putNormalExtras(pay_intent, data);
     // Boolean to save the entered card details by default 
     pay_intent.putExtra(PayActivityIntentKeys.SAVE_CARD_DEFAULT, saveCardDefault);
     // Boolean to display the save card checkbox
     pay_intent.putExtra(PayActivityIntentKeys.SHOW_SAVE_CARD, showSaveCard);
     pay_intent.putExtra(PayActivityIntentKeys.THEME_COLOR,0x80970073);
-    pay_intent.putExtra("ActionBar",hideActionBar);
-    pay_intent.putExtra("language",isEnglish);
+    Intent secure_intent = new Intent(currentActivity, ThreeDSecureWebViewActivty.class);
+    secure_intent.putExtra("ActionBar",hideActionBar);
+    pay_intent.putExtra("language",language);
     // String themeColor = (String) data.get("themeColor");
     // if(themeColor != null){
-    //   pay_intent.putExtra(PayActivityIntentKeys.THEME_COLOR, Integer.parseInt(themeColor, 16));
+    // pay_intent.putExtra(PayActivityIntentKeys.THEME_COLOR, Integer.parseInt(themeColor, 16));
 
     // }
 
@@ -74,8 +81,8 @@ private void startPayActivityToken(Activity currentActivity, HashMap data) {
     // pay_intent.putExtra(PayActivityIntentKeys.SHOW_SAVE_CARD, false);
     // String themeColor = (String) data.get("themeColor");
     // if(themeColor != null){
-    pay_intent.putExtra(PayActivityIntentKeys.THEME_COLOR,0x80970073);
-    //   pay_intent.putExtra(PayActivityIntentKeys.THEME_COLOR, Integer.parseInt(themeColor, 16));
+    // pay_intent.putExtra(PayActivityIntentKeys.THEME_COLOR,0x80970073);
+      // pay_intent.putExtra(PayActivityIntentKeys.THEME_COLOR, Integer.parseInt(themeColor, 16));
     // }
 
     currentActivity.startActivityForResult(pay_intent, ACCEPT_PAYMENT_REQUEST);
