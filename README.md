@@ -166,7 +166,7 @@ RNPaymobAccept.payWithNoToken({
 | **`paymentKey`**      | Generated one-time payment key                | String  | **Required** |
 | **`showSaveCard`**    | show save card checkbox                       | Boolean | **Required** |
 | **`saveCardDefault`** | default boolean for saving card               | Boolean | **Required** |
-| **`showAlerts`**      | show popup alerts                             | Boolean | **Optional** |
+| **`showAlerts`**      | show popup alerts                             | Boolean | **Required** |
 | **`isEnglish`**       | Language English or Arabic                    | Boolean |
 | **Required**          |
 | **`hideActionBar`**   | hide action bar (Android Only)                | Boolean | **Optional** |
