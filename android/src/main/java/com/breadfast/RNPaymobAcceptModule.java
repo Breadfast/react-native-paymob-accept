@@ -48,7 +48,6 @@ public class RNPaymobAcceptModule extends ReactContextBaseJavaModule {
     Boolean isEnglish = (Boolean) data.get("isEnglish");
     Boolean hideActionBar = (Boolean) data.get("hideActionBar");
     String language = "en";
-    Boolean showAlerts = (Boolean) data.get("showAlerts");
     if(isEnglish == false){
       language = "ar";
     }
@@ -61,7 +60,6 @@ public class RNPaymobAcceptModule extends ReactContextBaseJavaModule {
     Intent secure_intent = new Intent(currentActivity, ThreeDSecureWebViewActivty.class);
     secure_intent.putExtra("ActionBar",hideActionBar);
     pay_intent.putExtra("language",language);
-    pay_intent.putExtra("showAlerts", showAlerts);
     // String themeColor = (String) data.get("themeColor");
     // if(themeColor != null){
     // pay_intent.putExtra(PayActivityIntentKeys.THEME_COLOR, Integer.parseInt(themeColor, 16));
@@ -209,9 +207,7 @@ private final ActivityEventListener mActivityEventListener = new BaseActivityEve
             // User finished their payment successfully. An error occured while reading the returned JSON.
             responseMessage = extras.getString(IntentConstants.RAW_PAY_RESPONSE);
           }
-          // if(extras.getBoolean("showAlerts") == false){
-          //   ToastMaker.displayShortToast(activity, responseMessage);
-          // }
+          // ToastMaker.displayShortToast(activity, responseMessage);
           // HashMap resultMap  = new HashMap();
           // resultMap.put("code", resultCode);
           // resultMap.put("message", responseMessage);
