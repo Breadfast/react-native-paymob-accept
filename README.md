@@ -75,7 +75,7 @@ tools:replace="android:supportsRtl, android:allowBackup"
 
 to look like this
 
-```
+```xml
 <manifest
 ...
 xmlns:tools="http://schemas.android.com/tools">
@@ -85,18 +85,58 @@ xmlns:tools="http://schemas.android.com/tools">
     android:allowBackup="false"
     android:supportsRtl="true"
     tools:replace="android:supportsRtl, android:allowBackup">
+
+  <activity android:name="com.paymob.acceptsdk.ThreeDSecureWebViewActivty"
+          android:theme="@style/PaymobAcceptTheme"/>
 ```
 
-6. add action bar styles to styles.xml (replace AppTheme if exist)
+6. add action bar styles to styles.xml
 
+```xml
+<style name="PaymobAcceptTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+            <!-- Customize your theme here. -->
+            <!-- <item name="android:windowNoTitle">true</item> -->
+            <item name="android:editTextBackground">@android:color/transparent</item>
+            <item name="colorPrimary">#030</item>
+            <item name="colorPrimaryDark">#543</item>
+            <item name="colorAccent">#909</item>
+        </style>
 ```
-<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-</style>
+
+7. (OPTIONAL) You can control the wording anf styles by adding the below resources to your styles.xml or values.xml resources
+```xml
+        <!-- Paymob SDK params-->
+        <color name="colorAccent">#CC0bd796</color>
+        <color name="colorDefaultButton">#CC0bd796</color>
+        <color name="colorHint">#96b1bc</color>
+        <color name="colorPrimary">@color/colorPrimaryDark</color>
+        <color name="colorPrimaryDark" ns1:ignore="ResourceCycle">@color/colorPrimaryDark</color>
+        <color name="colorText">#4F7283</color>
+        <dimen name="large_padding_value">20dp</dimen>
+        <dimen name="large_text_size">15sp</dimen>
+        <dimen name="normal_padding_value">15dp</dimen>
+        <dimen name="normal_text_size">14sp</dimen>
+        <dimen name="small_padding_value">10dp</dimen>
+        <dimen name="tiny_padding_value">5dp</dimen>
+        <string name="Card_Number_check"> Card Number must be 16 digits! </string>
+        <string name="Cvv_check">CVV must be 3 digits! </string>
+        <string name="Date_check">Invalid Date!</string>
+        <string name="Empty_name_check">Name can not be empty</string>
+        <string name="Expiration"> Expiry Date</string>
+        <string name="PoweredBy">Powered by </string>
+        <string name="app_id">app_id</string>
+        <string name="app_name">AcceptSDK</string>
+        <string name="card_holder_name"> Card Holder Name </string>
+        <string name="card_info">Card Information</string>
+        <string name="card_number"> Card Number</string>
+        <string name="cvv"> CVV </string> -->
+        <string name="pay_button"> TEST </string>
+        <!-- <string name="pref_file_name">shared_pref</string>
+        <string name="processing">Processing payment...</string>
+        <string name="save_card"> This Card will be saved for future use </string>
+        <string name="wait">Please wait...</string> 
 ```
+
 
 ## Usage
 
