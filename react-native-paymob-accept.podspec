@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = { "DEFINES_MODULE" => "YES" }
 
   s.dependency "React"
-  s.dependency "AcceptCardSDK", '5.3.4'
+  s.dependency "AcceptCardSDK"
   # ...
   # s.dependency "..."
 end
