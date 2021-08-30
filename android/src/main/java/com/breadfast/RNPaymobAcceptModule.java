@@ -215,7 +215,9 @@ private final ActivityEventListener mActivityEventListener = new BaseActivityEve
         }
 
       }catch (Exception e){
-        mErrorCallback.invoke(e);
+        if(mErrorCallback != null){
+          mErrorCallback.invoke(e);
+        }
       }
   }
 };
