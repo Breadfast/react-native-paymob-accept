@@ -237,6 +237,8 @@ class RNPaymobAccept: UIViewController, AcceptSDKDelegate {
              "integration_id": payData.integration_id,
              "order": payData.order
         ] as [String : Any]
-        
+        @objc override static func requiresMainQueueSetup() -> Bool {
+            return true
+        }
     }
 }
